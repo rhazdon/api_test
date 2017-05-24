@@ -6,54 +6,241 @@ HOST: https://api.acme.com
 API requires authorization. All requests must have valid `auth_token`
 
 
-# Group asd123
+
+# Group Blog Threads
+
+## Blog Threads [/api/threads]
+
+### Show all threads [GET]
 
 
-## asd123 [/api/post]
 
-### 123asd [POST]
+
++ Response 200
+    + Headers
+
+        ```
+        content-type: application/json; charset=utf-8
+        cache-control: max-age=0, private, must-revalidate
+        x-request-id: k05e0l1ikkfhvc2b7sh4kf5sqtr7v468
+        ```
+
+    + Body
+
+        ```
+        {"status":"ok"}
+        ```
+
+
+### Create new thread [POST]
+
+
+
+
+
++ Request 
+    + Headers
+
+        ```
+        content-type: application/json
+        ```
+
+    + Body
+
+        ```
+        {"param":3}
+        ```
+
+
++ Response 200
+    + Headers
+
+        ```
+        content-type: application/json; charset=utf-8
+        cache-control: max-age=0, private, must-revalidate
+        x-request-id: g73knh3biklbt3itb2a6md7kj7mmo0bf
+        ```
+
+    + Body
+
+        ```
+        {"status":"ok"}
+        ```
+
+
+## Blog Threads [/api/threads/{id}]
+
+### Show single thread [GET]
+
+
+
+
+::: note
+This is a note
+:::
+
+
+::: warning
+This is only for logged in users!
+:::
+
+
++ Parameters
+
+    + id: `-` (integer, optional) - 
++ Response 200
+    + Headers
+
+        ```
+        content-type: application/json; charset=utf-8
+        cache-control: max-age=0, private, must-revalidate
+        x-request-id: ct798h6deq6b01ia7e2ddeqc323pjfj1
+        ```
+
+    + Body
+
+        ```
+        {"status":"ok"}
+        ```
+
+
+### Update Thread [PUT]
 
 
 
 
 + Parameters
 
-+ Request json
+    + id: `-` (integer, optional) - 
 
-  + Headers
-    content-type: application/json
++ Request 
+    + Headers
 
+        ```
+        content-type: application/json
+        ```
 
-+ Response 200
+    + Body
 
-  + Headers
-    content-type: application/json; charset=utf-8
-    cache-control: max-age=0, private, must-revalidate
-    x-request-id: 1v5oadijobr2b8ccq54toahdqcrf67fl
-
-
-# Group testttasd
-
-
-## testttasd [/api/test/{p}]
-
-### Testiiii [GET]
-
-
-
-
-+ Parameters
-
-+ Request json
-
-  + Headers
+        ```
+        {"param":3}
+        ```
 
 
 + Response 200
+    + Headers
 
-  + Headers
-    content-type: application/json; charset=utf-8
-    cache-control: max-age=0, private, must-revalidate
-    x-request-id: nb74m6kh94l2or9a78amaat7clmk51no
+        ```
+        content-type: application/json; charset=utf-8
+        cache-control: max-age=0, private, must-revalidate
+        x-request-id: rfcncu6512tv6f114rqcincv6pv7vvk8
+        ```
 
+    + Body
+
+        ```
+        {"status":"unprocessable entity"}
+        ```
+
+
+
++ Request 
+    + Headers
+
+        ```
+        content-type: application/json
+        ```
+
+    + Body
+
+        ```
+        {"param":3}
+        ```
+
+
++ Response 422
+    + Headers
+
+        ```
+        content-type: application/json; charset=utf-8
+        cache-control: max-age=0, private, must-revalidate
+        x-request-id: pr5k9toa52sgutquqtgf2tehtg9vbvub
+        ```
+
+    + Body
+
+        ```
+        {"status":"unprocessable entity"}
+        ```
+
+
+# Group Users
+
+## Users [/api/users]
+
+### Get all users [GET]
+
+
+
+
+::: warning
+Admin only!
+:::
+
+
++ Response 200
+    + Headers
+
+        ```
+        content-type: application/json; charset=utf-8
+        cache-control: max-age=0, private, must-revalidate
+        x-request-id: n84sf8ml4fi0ttc4t9jlsjjsvblemipb
+        ```
+
+    + Body
+
+        ```
+        {"status":"ok"}
+        ```
+
+
+### Create new user [POST]
+
+
+
+
+::: warning
+Admin only!
+:::
+
+
+
++ Request 
+    + Headers
+
+        ```
+        content-type: application/json
+        ```
+
+    + Body
+
+        ```
+        {"param":3}
+        ```
+
+
++ Response 200
+    + Headers
+
+        ```
+        content-type: application/json; charset=utf-8
+        cache-control: max-age=0, private, must-revalidate
+        x-request-id: urt6t6on0t6p2g1il5hatek8b7n2440d
+        ```
+
+    + Body
+
+        ```
+        {"status":"ok"}
+        ```
 

@@ -8,7 +8,13 @@ defmodule ApiTest.Web.Router do
   scope "/api", ApiTest.Web do
     pipe_through :api
 
-    get "/test/:p", TestinatorController, :index
-    post "/post", TestinatorController, :post
+    get "/threads",     ThreadsController, :index
+    get "/threads/:id", ThreadsController, :show
+
+    post "/threads",     ThreadsController, :create
+    put  "/threads/:id", ThreadsController, :update
+
+    get  "/users", UsersController, :index
+    post "/users", UsersController, :create
   end
 end

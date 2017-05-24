@@ -1,18 +1,18 @@
-defmodule ApiTest.Web.TestinatorControllerTest do
+defmodule ApiTest.Web.UsersControllerTest do
   use ApiTest.Web.ConnCase
 
-  test "index get" do
-    conn = build_conn()
-    |> get("/api/test/3")
+  test "index/2" do
+    build_conn()
+    |> get("/api/users")
     |> BlueBird.ConnLogger.save()
 
     assert true
   end
 
-  test "index post" do
-    conn = build_conn()
+  test "create/2" do
+    build_conn()
     |> put_req_header("content-type", "application/json")
-    |> post("/api/post", %{p: 3})
+    |> post("/api/users", Poison.encode! %{param: 3})
     |> BlueBird.ConnLogger.save()
 
     assert true
